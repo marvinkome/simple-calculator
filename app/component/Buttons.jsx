@@ -57,7 +57,7 @@ export default class Buttons extends React.Component{
                 </Col>
                 {/* clear button */}
 				
-				<Col s={3} onClick={this.handleOperatorClick} className="white">
+                <Col s={3} onClick={this.handleOperatorClick} className="white">
                     <div className="section center">
                         <span>⌫</span>
                     </div>
@@ -85,7 +85,7 @@ export default class Buttons extends React.Component{
                 </Col>
                 {/* 9 button */}
 				
-				<Col s={3} onClick={this.handleOperatorClick} className="red accent-3">
+                <Col s={3} onClick={this.handleOperatorClick} className="red accent-3">
                     <div className="section center">
                         <span>÷</span>
                     </div>
@@ -113,7 +113,7 @@ export default class Buttons extends React.Component{
                 </Col>
                 {/* 4 button */}
 				
-				<Col s={3} onClick={this.handleOperatorClick} className="red accent-3">
+                <Col s={3} onClick={this.handleOperatorClick} className="red accent-3">
                     <div className="section center">
                         <span>x</span>
                     </div>
@@ -141,7 +141,7 @@ export default class Buttons extends React.Component{
                 </Col>
                 {/* 1 button */}
 				
-				<Col s={3} onClick={this.handleOperatorClick} className="red accent-3">
+                <Col s={3} onClick={this.handleOperatorClick} className="red accent-3">
                     <div className="section center">
                         <span>-</span>
                     </div>
@@ -162,7 +162,7 @@ export default class Buttons extends React.Component{
                 </Col>
                 {/* = button */}
 				
-				<Col s={3} onClick={this.handleOperatorClick} className="red accent-3">
+                <Col s={3} onClick={this.handleOperatorClick} className="red accent-3">>
                     <div className="section center">
                         <span>+</span>
                     </div>
