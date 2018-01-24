@@ -1,0 +1,58 @@
+/**
+    path: ./css/style.css
+*/
+@import url('../vendor/fonts/montserrat.css');
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    overflow: hidden;
+}
+.view{
+    height: 100vh;
+}
+div.wrap{
+    height: 16.7%;
+}
+#screen span{
+    font-size: 3em;
+    font-weight: 700;
+}
+#screen .section{
+    padding-top: 0.6rem;
+    padding-bottom: 0.2rem;
+    padding-left: 0.3125em;
+    
+}
+#calc.row{
+    height: 83.3%;
+}
+#calc.row span{
+    font-weight: 600;
+    font-size: 1.875em;
+}
+#calc.row .col {
+    padding: 0;
+    border: 0.05625em solid rgb(59, 2, 2);
+    height: 20%
+}
+#calc.row div.section{
+    height:50%;
+}
+
+@media (min-height: 630px){
+    #calc.row .s3 div.section, #calc.row div.section{
+        margin-top: 19px;
+    }
+}
+@media (min-height: 810px){
+    #calc.row .s3 div.section, #calc.row div.section{
+        margin-top: 30px;
+    }
+}
+@media (min-height: 1365px){
+    #calc.row .s3 div.section, #calc.row div.section{
+        margin-top: 60px;
+    }
+}
