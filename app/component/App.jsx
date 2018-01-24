@@ -37,11 +37,17 @@ export default class App extends React.Component{
     }
 
     handleOperator(val){
-        this.setState({
-            tmp_num: this.state.number,
-            number: '',
-            operator: val
-        });
+        if (val == "⌫"){
+			this.setState({
+                number: this.state.number.substring(0, this.state.number.length - 1)
+            });
+		} else {
+			this.setState({
+            	tmp_num: this.state.number,
+            	number: '',
+            	operator: val
+        	});
+		}
     }
 
     handleSolve(val){
