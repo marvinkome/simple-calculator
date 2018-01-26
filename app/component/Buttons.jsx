@@ -56,13 +56,13 @@ export default class Buttons extends React.Component{
                     </div>
                 </Col>
                 {/* clear button */}
-
-                <Col s={3} onClick={this.handleOperatorClick} className="red accent-3">
+				
+                <Col s={3} onClick={this.handleOperatorClick} className="white">
                     <div className="section center">
-                        <span>÷</span>
+                        <span>⌫</span>
                     </div>
                 </Col>
-                {/* ÷ button */}
+                {/* ⌫ button */}
 
                 <Col s={3} onClick={this.handleNumberClick} className="white">
                     <div className="section center">
@@ -84,13 +84,13 @@ export default class Buttons extends React.Component{
                     </div>
                 </Col>
                 {/* 9 button */}
-
+				
                 <Col s={3} onClick={this.handleOperatorClick} className="red accent-3">
                     <div className="section center">
-                        <span>x</span>
+                        <span>÷</span>
                     </div>
                 </Col>
-                {/* x button */}
+                {/* ÷ button */}
 
                 <Col s={3} onClick={this.handleNumberClick} className="white">
                     <div className="section center">
@@ -112,13 +112,13 @@ export default class Buttons extends React.Component{
                     </div>
                 </Col>
                 {/* 4 button */}
-
+				
                 <Col s={3} onClick={this.handleOperatorClick} className="red accent-3">
                     <div className="section center">
-                        <span>-</span>
+                        <span>x</span>
                     </div>
                 </Col>
-                {/* - button */}
+                {/* x button */}
 
                 <Col s={3} onClick={this.handleNumberClick} className="white">
                     <div className="section center">
@@ -140,13 +140,13 @@ export default class Buttons extends React.Component{
                     </div>
                 </Col>
                 {/* 1 button */}
-
+				
                 <Col s={3} onClick={this.handleOperatorClick} className="red accent-3">
                     <div className="section center">
-                        <span>+</span>
+                        <span>-</span>
                     </div>
                 </Col>
-                {/* + button */}
+                {/* - button */}
 
                 <Col s={3} onClick={this.handleNumberClick} className="white">
                     <div className="section center">
@@ -155,12 +155,19 @@ export default class Buttons extends React.Component{
                 </Col>
                 {/* 0 button */}
 
-                <Col s={9} onClick={this.handleSolveClick} className="red accent-3">
+                <Col s={6} onClick={this.handleSolveClick} className="red accent-3">
                     <div className="section center">
                         <span>=</span>
                     </div>
                 </Col>
                 {/* = button */}
+				
+                <Col s={3} onClick={this.handleOperatorClick} className="red accent-3">>
+                    <div className="section center">
+                        <span>+</span>
+                    </div>
+                </Col>
+                {/* + button */}
             </Row>
         );
     }
