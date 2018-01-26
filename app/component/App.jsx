@@ -15,6 +15,7 @@ export default class App extends React.Component{
         this.handleOperator = this.handleOperator.bind(this);
         this.handleSolve = this.handleSolve.bind(this);
         this.handleClear = this.handleClear.bind(this);
+        this.handleUndo = this.handleUndo.bind(this);
 
         this.state = {
             number: '',
@@ -37,17 +38,11 @@ export default class App extends React.Component{
     }
 
     handleOperator(val){
-        if (val == "⌫"){
-			this.setState({
-                number: this.state.number.substring(0, this.state.number.length - 1)
-            });
-		} else {
-			this.setState({
-            	tmp_num: this.state.number,
-            	number: '',
-            	operator: val
-        	});
-		}
+		this.setState({
+            tmp_num: this.state.number,
+            number: '',
+            operator: val
+        });
     }
 
     handleSolve(val){
@@ -85,14 +80,23 @@ export default class App extends React.Component{
         }
     }
 
+    handleUndo(val){
+        if (val){
+            this.setState({
+                number: this.state.number.substring(0, this.state.number.length - 1)
+            });
+        }
+    }
+
     render(){
         return(
             <div className="view">
-                <Screen number={this.state.number}/>
+                <Screen number={Math.round(this.state.number * 100) / 100}/>
                 <Buttons number={this.handleNumber}
                          operator={this.handleOperator}
                          solve={this.handleSolve}
-                         clear={this.handleClear}/>
+                         clear={this.handleClear}
+                         undo={this.handleUndo}/>
             </div>
         );
     }

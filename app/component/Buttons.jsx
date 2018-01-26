@@ -13,22 +13,13 @@ export default class Buttons extends React.Component{
         this.handleClearClick = this.handleClearClick.bind(this);
         this.handleNumberClick = this.handleNumberClick.bind(this);
         this.handleSolveClick = this.handleSolveClick.bind(this);
-
-        this.state = {
-            number: '',
-            operator: '',
-            clear: false
-        };
+        this.handleUndoClick = this.handleUndoClick.bind(this);
 
         this.props.solve(false);
         this.props.clear(false);
     }
 
     handleNumberClick(event){
-        this.setState({
-            number: event.currentTarget.textContent
-        });
-
         this.props.number(event.currentTarget.textContent);
     }
 
@@ -37,9 +28,6 @@ export default class Buttons extends React.Component{
     }
 
     handleOperatorClick(event){
-        this.setState({
-            operator: event.currentTarget.textContent
-        });
         this.props.operator(event.currentTarget.textContent);
     }
 
@@ -47,22 +35,33 @@ export default class Buttons extends React.Component{
         this.props.solve(true);
     }
 
+    handleUndoClick(event){
+        this.props.undo(true);
+    }
+
     render(){
         return(
             <Row id='calc'>
-                <Col s={9} onClick={this.handleClearClick} className="white">
+                <Col s={6} onClick={this.handleClearClick} className="white">
                     <div className="section center">
                         <span>Clear</span>
                     </div>
                 </Col>
                 {/* clear button */}
 				
-                <Col s={3} onClick={this.handleOperatorClick} className="white">
+                <Col s={3} onClick={this.handleUndoClick} className="red accent-3">
                     <div className="section center">
-                        <span>⌫</span>
+                        <span>←</span>
                     </div>
                 </Col>
-                {/* ⌫ button */}
+                {/* ← button */}
+
+                <Col s={3} onClick={this.handleOperatorClick} className="red accent-3">
+                    <div className="section center">
+                        <span>÷</span>
+                    </div>
+                </Col>
+                {/* ÷ button */}
 
                 <Col s={3} onClick={this.handleNumberClick} className="white">
                     <div className="section center">
@@ -84,13 +83,13 @@ export default class Buttons extends React.Component{
                     </div>
                 </Col>
                 {/* 9 button */}
-				
+
                 <Col s={3} onClick={this.handleOperatorClick} className="red accent-3">
                     <div className="section center">
-                        <span>÷</span>
+                        <span>x</span>
                     </div>
                 </Col>
-                {/* ÷ button */}
+                {/* x button */}
 
                 <Col s={3} onClick={this.handleNumberClick} className="white">
                     <div className="section center">
@@ -112,13 +111,13 @@ export default class Buttons extends React.Component{
                     </div>
                 </Col>
                 {/* 4 button */}
-				
+
                 <Col s={3} onClick={this.handleOperatorClick} className="red accent-3">
                     <div className="section center">
-                        <span>x</span>
+                        <span>-</span>
                     </div>
                 </Col>
-                {/* x button */}
+                {/* - button */}
 
                 <Col s={3} onClick={this.handleNumberClick} className="white">
                     <div className="section center">
@@ -140,13 +139,13 @@ export default class Buttons extends React.Component{
                     </div>
                 </Col>
                 {/* 1 button */}
-				
+
                 <Col s={3} onClick={this.handleOperatorClick} className="red accent-3">
                     <div className="section center">
-                        <span>-</span>
+                        <span>+</span>
                     </div>
                 </Col>
-                {/* - button */}
+                {/* + button */}
 
                 <Col s={3} onClick={this.handleNumberClick} className="white">
                     <div className="section center">
@@ -155,19 +154,12 @@ export default class Buttons extends React.Component{
                 </Col>
                 {/* 0 button */}
 
-                <Col s={6} onClick={this.handleSolveClick} className="red accent-3">
+                <Col s={9} onClick={this.handleSolveClick} className="red accent-3">
                     <div className="section center">
                         <span>=</span>
                     </div>
                 </Col>
                 {/* = button */}
-				
-                <Col s={3} onClick={this.handleOperatorClick} className="red accent-3">>
-                    <div className="section center">
-                        <span>+</span>
-                    </div>
-                </Col>
-                {/* + button */}
             </Row>
         );
     }
